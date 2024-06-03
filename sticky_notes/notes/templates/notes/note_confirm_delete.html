@@ -1,0 +1,11 @@
+{% extends 'notes/base.html' %}
+{% block content %}
+<div class="confirm-delete">
+    <h2>Delete Note</h2>
+    <p>Are you sure you want to delete "{{ note.title }}"?</p>
+    <form method="post" class="delete-form">
+        {% csrf_token %}
+        <button type="submit" class="action-btn delete-btn">Confirm</button>
+    </form>
+</div>
+{% endblock %}

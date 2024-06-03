@@ -1,0 +1,15 @@
+{% extends 'notes/base.html' %}
+{% block content %}
+<h2>Notes</h2>
+<div class="note-container">
+    {% for note in notes %}
+    <div class="note-card">
+        <h3 class="note-title">{{ note.title }}</h3>
+        <p class="note-content">{{ note.content }}</p>
+        <div class="note-actions">
+            <a href="{% url 'note_detail' note.pk %}" class="action-btn">View</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
