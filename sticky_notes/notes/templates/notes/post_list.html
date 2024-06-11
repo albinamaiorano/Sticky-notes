@@ -1,0 +1,29 @@
+{% extends 'notes/base.html' %}
+
+{% block content %}
+    <!-- Start of content block -->
+    <h2>Posts</h2> <!-- Header for the posts section -->
+
+    <!-- Container for displaying posts -->
+    <div class="post-container">
+        {% for post in posts %}
+            <!-- Start of individual post card -->
+            <div class="post-card">
+                <!-- Title of the post -->
+                <h3 class="post-title">{{ post.title }}</h3>
+                
+                <!-- Content of the post -->
+                <p class="post-content">{{ post.content }}</p>
+                
+                <!-- Actions for the post -->
+                <div class="post-actions">
+                    <!-- Button to view the post details -->
+                    <a href="{% url 'post_detail' post.pk %}" class="action-btn">View</a>
+                </div>
+            </div>
+            <!-- End of individual post card -->
+        {% endfor %}
+    </div>
+    <!-- End of post container -->
+{% endblock %}
+<!-- End of content block -->

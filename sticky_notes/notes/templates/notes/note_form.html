@@ -1,16 +1,30 @@
 {% extends 'notes/base.html' %}
+
 {% block content %}
+<!-- Start of 'content' block -->
+
+<!-- Heading for creating a new note -->
 <h2>New Note</h2>
+
+<!-- Form for creating a new note -->
 <form method="post" class="note-form">
-    {% csrf_token %}
+    {% csrf_token %} <!-- CSRF token for form submission security -->
+
+    <!-- Field for entering the title of the note -->
     <div class="form-group">
-        <label for="id_title">Title</label>
-        {{ form.title }}
+        <label for="id_title">Title</label> <!-- Label for the title field -->
+        {{ form.title }} <!-- Input field for the title -->
     </div>
+
+    <!-- Field for entering the content of the note -->
     <div class="form-group">
-        <label for="id_content">Content</label>
-        {{ form.content }}
+        <label for="id_content">Content</label> <!-- Label for the content field -->
+        {{ form.content }} <!-- Text area for the content -->
     </div>
+
+    <!-- Button to submit the form and save the note -->
     <button type="submit" class="action-btn">Save</button>
 </form>
+
+<!-- End of 'content' block -->
 {% endblock %}

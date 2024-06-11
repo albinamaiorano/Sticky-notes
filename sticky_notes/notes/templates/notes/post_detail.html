@@ -1,0 +1,9 @@
+{% extends 'notes/base.html' %}  <!-- Extend the base.html template -->
+
+{% block content %}  <!-- Define a block named content -->
+    <h2>{{ post.title }}</h2>  <!-- Display the title of the post -->
+    <p>{{ post.content }}</p>  <!-- Display the content of the post -->
+    <div class="post-actions">  <!-- Start of post-actions section -->
+        <a href="{% url 'post_list' %}" class="action-btn">Back to list</a>  <!-- Link to the post list -->
+    </div>  <!-- End of post-actions section -->
+{% endblock %}  <!-- End of content block -->

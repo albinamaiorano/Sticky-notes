@@ -1,0 +1,25 @@
+{% extends 'notes/base.html' %}
+
+{% block content %}
+    <!-- Header for the form, displaying whether it's for editing or creating a new post -->
+    <h2>{% if post.pk %}Edit{% else %}New{% endif %} Post</h2>
+    
+    <!-- Form for creating or editing a post -->
+    <form method="post">
+        <!-- CSRF token for security -->
+        {% csrf_token %}
+        
+        <!-- Displaying form fields using paragraph elements -->
+        {{ form.as_p }}
+        
+        <!-- Submit button for the form -->
+        <button type="submit" class="action-btn">
+            <!-- Displaying appropriate text based on whether it's an update or create action -->
+            {% if post.pk %}
+                Update
+            {% else %}
+                Create
+            {% endif %}
+        </button>
+    </form>
+{% endblock %}

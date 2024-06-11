@@ -1,12 +1,26 @@
 {% extends 'notes/base.html' %}
+
 {% block content %}
+<!-- Block for displaying details of a single note -->
+
+<!-- Container for note details -->
 <div class="note-detail">
+    <!-- Title of the note -->
     <h2>{{ note.title }}</h2>
+    
+    <!-- Content of the note -->
     <p>{{ note.content }}</p>
+    
+    <!-- Actions for the note -->
     <div class="note-actions">
+        <!-- Link to edit the note -->
         <a href="{% url 'note_update' note.pk %}" class="action-btn">Edit</a>
+        
+        <!-- Form to delete the note -->
         <form method="post" action="{% url 'note_delete' note.pk %}" class="delete-form">
             {% csrf_token %}
+            
+            <!-- Button to submit the delete form -->
             <button type="submit" class="action-btn delete-btn">Delete</button>
         </form>
     </div>

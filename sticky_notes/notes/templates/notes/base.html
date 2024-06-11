@@ -1,23 +1,23 @@
-{% load static %}
+{% load static %}  <!-- Load static files like CSS and JavaScript -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sticky Notes</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <meta charset="UTF-8">  <!-- Set the character encoding for the document -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!-- Set the viewport for responsive design -->
+    <title>Sticky Notes</title>  <!-- Set the title of the document -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">  <!-- Link to an external CSS file -->
 </head>
 <body>
     <header>
-        <h1>Sticky Notes</h1>
+        <h1>Sticky Notes</h1>  <!-- Header title -->
         <nav>
-            <a href="{% url 'note_list' %}">Home</a>
-            <a href="{% url 'note_create' %}">Create Note</a>
+            <a href="{% url 'note_list' %}">Home</a>  <!-- Link to the home page -->
+            <a href="{% url 'note_create' %}">Create Note</a>  <!-- Link to create a new note -->
         </nav>
     </header>
     <main>
-        {% block content %}
-        {% endblock %}
+        {% block content %}  <!-- Define a block named content -->
+        {% endblock %}  <!-- End of the content block -->
     </main>
 </body>
 </html>

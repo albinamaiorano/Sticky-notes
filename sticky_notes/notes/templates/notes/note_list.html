@@ -1,15 +1,16 @@
-{% extends 'notes/base.html' %}
-{% block content %}
-<h2>Notes</h2>
-<div class="note-container">
-    {% for note in notes %}
-    <div class="note-card">
-        <h3 class="note-title">{{ note.title }}</h3>
-        <p class="note-content">{{ note.content }}</p>
-        <div class="note-actions">
-            <a href="{% url 'note_detail' note.pk %}" class="action-btn">View</a>
+{% extends 'notes/base.html' %}  <!-- Extend the base.html template -->
+
+{% block content %}  <!-- Start of the content block -->
+<h2>Notes</h2>  <!-- Heading for the notes section -->
+<div class="note-container">  <!-- Container for individual notes -->
+    {% for note in notes %}  <!-- Loop through each note -->
+    <div class="note-card">  <!-- Individual note card -->
+        <h3 class="note-title">{{ note.title }}</h3>  <!-- Title of the note -->
+        <p class="note-content">{{ note.content }}</p>  <!-- Content of the note -->
+        <div class="note-actions">  <!-- Actions for the note -->
+            <a href="{% url 'note_detail' note.pk %}" class="action-btn">View</a>  <!-- Link to view the full note -->
         </div>
     </div>
-    {% endfor %}
-</div>
-{% endblock %}
+    {% endfor %}  <!-- End of the loop -->
+</div>  <!-- End of the note container -->
+{% endblock %}  <!-- End of the content block -->
