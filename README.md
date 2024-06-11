@@ -48,4 +48,4 @@ Acknowledgements
 
 Get in Touch
 
-Have questions or suggestions? Feel free to reach out to me at your-albamaiorano@gmail.com.
+Have questions or suggestions? Feel free to reach out to me at albamaiorano@gmail.com.
